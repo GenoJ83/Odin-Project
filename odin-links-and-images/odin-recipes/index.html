@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odin Recipes - All Recipes</title>
     <link rel="stylesheet" href="../style.css">
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const input = document.getElementById('recipe-search');
+        const list = document.getElementById('recipe-list');
+        input.addEventListener('input', function() {
+          const filter = input.value.toLowerCase();
+          Array.from(list.getElementsByTagName('li')).forEach(function(li) {
+            const text = li.textContent.toLowerCase();
+            li.style.display = text.includes(filter) ? '' : 'none';
+          });
+        });
+      });
+    </script>
 </head>
 <body>
     <header>
@@ -17,7 +30,9 @@
         <a href="../pages/contact.html">Contact</a>
     </nav>
     <div class="container">
-        <ul>
+        <label for="recipe-search" style="font-weight:bold;">Search Recipes:</label>
+        <input id="recipe-search" type="text" placeholder="Type to filter..." style="margin-bottom:18px; width:100%; max-width:350px; padding:8px; border-radius:4px; border:1px solid #ccc;">
+        <ul id="recipe-list">
             <li><a class="button" href="recipes/lasagna.html">Lasagna Recipe</a></li>
             <li><a class="button" href="recipes/pizza.html">Pizza Recipe</a></li>
             <li><a class="button" href="recipes/chickencurry.html">Indian Chicken Curry Recipe</a></li>
