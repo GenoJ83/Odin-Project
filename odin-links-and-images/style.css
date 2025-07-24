@@ -72,31 +72,67 @@ p {
   color: var(--text-secondary);
 }
 
+/* Header */
+header {
+  background: var(--primary-color);
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: center;
+}
+
+header h1 {
+  color: var(--background-white);
+  font-size: clamp(3rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 /* Navigation */
 nav {
   background: var(--background-white);
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-nav a {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
   color: var(--text-primary);
   text-decoration: none;
   font-size: 1rem;
-  padding: var(--spacing-xs) var(--spacing-sm);
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
   border-radius: var(--border-radius-sm);
   transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
 
-nav a::after {
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.nav-links a::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -109,10 +145,54 @@ nav a::after {
   transition: transform 0.3s ease;
 }
 
-nav a:hover::after,
-nav a.active::after {
+.nav-links a:hover::before,
+.nav-links a.active::before {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--background-white);
+    flex-direction: column;
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links a {
+    padding: var(--spacing-md);
+    width: 100%;
+    display: block;
+  }
 }
 
 /* Cards */
