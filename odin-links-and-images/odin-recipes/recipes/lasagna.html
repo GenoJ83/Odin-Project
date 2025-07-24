@@ -4,56 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lasagna Recipe</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f8f8f8;
-        }
-        h1 {
-            color: #d35400;
-        }
-        h2 {
-            color: #e67e22;
-        }
-        ul, ol {
-            background-color: #fff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .container {
-            max-width: 700px;
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-         /* Apple-style image formatting */
-         img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-    </style>
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <a href="../index.html">Home</a>
-
-    <div class="container">
+    <header>
         <h1>Classic Lasagna Recipe</h1>
-        <img src="./images/lasagna.png" height="310" alt="Lasagna Recipe">
+    </header>
+    <nav>
+        <a href="../../../index.html">Home</a>
+        <a href="../index.html">Recipes</a>
+        <a href="../../pages/about.html">About</a>
+        <a href="../../pages/contact.html">Contact</a>
+    </nav>
+    <div class="container">
+        <img src="images/lasagna.png" height="310" alt="Lasagna Recipe">
         <h2>Ingredients</h2>
         <ul>
             <li>12 lasagna noodles</li>
@@ -81,5 +45,8 @@
             <li>Let lasagna rest for 10 minutes before serving. Garnish with fresh basil if desired.</li>
         </ol>
     </div>
+    <footer>
+        &copy; 2025 Odin Recipes | Crafted with love for food enthusiasts
+    </footer>
 </body>
 </html>
