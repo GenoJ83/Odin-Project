@@ -57,32 +57,12 @@ nav {
     left: 0;
     right: 0;
     z-index: 1000;
-    padding: var(--spacing-sm) var(--spacing-lg);
 }
 
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.nav-links {
-    display: flex;
-    gap: var(--spacing-md);
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    flex-wrap: wrap;
-}
-
-.nav-links a {
+nav a {
     color: var(--text-primary);
     text-decoration: none;
     font-size: 1rem;
-    font-weight: 500;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius-sm);
     transition: var(--transition);
@@ -91,13 +71,13 @@ nav {
     white-space: nowrap;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+nav a:hover,
+nav a.active {
     color: var(--accent-color);
     transform: translateY(-1px);
 }
 
-.nav-links a::before {
+nav a::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -110,10 +90,62 @@ nav {
     transition: transform 0.3s ease;
 }
 
-.nav-links a:hover::before,
-.nav-links a.active::before {
+nav a:hover::before,
+nav a.active::before {
     transform: scaleX(1);
     transform-origin: left;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+}
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--background-white);
+        flex-direction: column;
+        padding: var(--spacing-xl) var(--spacing-lg);
+        box-shadow: var(--shadow-md);
+        overflow-y: auto;
+        align-items: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        width: 100%;
+        text-align: right;
+        padding: var(--spacing-sm) 0;
+    }
+
+    nav a {
+        padding: var(--spacing-lg);
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid var(--background-light);
+        text-align: center;
+        white-space: normal;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
 }
 
 /* Mobile Navigation */
