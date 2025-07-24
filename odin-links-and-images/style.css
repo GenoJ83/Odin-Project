@@ -92,8 +92,10 @@ header h1 {
 nav {
     background: var(--background-white);
     box-shadow: var(--shadow-sm);
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 1000;
     width: 100%;
 }
@@ -105,6 +107,7 @@ nav {
     padding: var(--spacing-sm) var(--spacing-lg);
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .nav-links {
@@ -113,6 +116,7 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -125,6 +129,7 @@ nav {
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    white-space: nowrap;
 }
 
 .nav-links a:hover,
@@ -164,10 +169,15 @@ nav {
 }
 
 @media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
-        top: var(--spacing-xl);
+        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
@@ -176,6 +186,7 @@ nav {
         padding: var(--spacing-lg);
         box-shadow: var(--shadow-md);
         overflow-y: auto;
+        align-items: center;
     }
 
     .nav-links.active {
@@ -184,11 +195,14 @@ nav {
 
     .mobile-nav-toggle {
         display: block;
+        width: 100%;
+        text-align: right;
     }
 
     .nav-links li {
         width: 100%;
         text-align: center;
+        padding: 0 var(--spacing-lg);
     }
 
     .nav-links a {
@@ -196,10 +210,71 @@ nav {
         width: 100%;
         display: block;
         border-bottom: 1px solid var(--background-light);
+        text-align: center;
+        white-space: normal;
     }
 
     .nav-links a:last-child {
         border-bottom: none;
+    }
+}
+
+/* Footer */
+footer {
+    background: var(--background-white);
+    padding: var(--spacing-lg);
+    margin-top: auto;
+    position: relative;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.footer-nav {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    padding: var(--spacing-sm);
+}
+
+.footer-nav a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: var(--spacing-md);
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing-md);
+    }
+
+    .footer-nav a {
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 }
 
