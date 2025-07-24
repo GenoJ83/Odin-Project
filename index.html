@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Odin Recipes - Welcome</title>
+    <title>Odin Recipes</title>
     <link rel="stylesheet" href="odin-links-and-images/style.css">
 </head>
 <body class="home-page">
@@ -16,48 +16,72 @@
         <a href="odin-links-and-images/pages/about.html">About</a>
         <a href="odin-links-and-images/pages/contact.html">Contact</a>
     </nav>
-    <div class="container">
-        <div class="welcome-section">
+    <main class="container">
+        <section class="hero">
             <h2>Welcome to Odin Recipes</h2>
-            <p>Discover delicious recipes from around the world. Whether you're a beginner or an experienced cook, you'll find something to love here.</p>
-        </div>
+            <p class="hero-text">Learn to cook amazing dishes from around the world with our carefully crafted recipes.</p>
+        </section>
 
-        <div class="featured-recipes">
+        <section class="featured-recipes">
             <h2>Featured Recipes</h2>
             <div class="recipe-grid">
-                <div class="recipe-card">
-                    <img src="odin-links-and-images/odin-recipes/recipes/images/lasagna.png" alt="Lasagna Recipe">
+                <article class="recipe-card">
+                    <img src="odin-links-and-images/odin-recipes/recipes/images/lasagna.png" alt="Classic Lasagna">
                     <div class="recipe-card-content">
-                        <h2>Classic Lasagna</h2>
-                        <p>A hearty Italian classic made with layers of pasta, ground beef, and three types of cheese.</p>
+                        <h3>Classic Lasagna</h3>
+                        <p>Layers of pasta, ground beef, and three types of cheese create this Italian classic.</p>
+                        <div class="recipe-meta">
+                            <span>Prep: 30 min</span>
+                            <span>Cook: 45 min</span>
+                            <span>Serves: 6</span>
+                        </div>
                         <a href="odin-links-and-images/odin-recipes/recipes/lasagna.html" class="button">View Recipe</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="recipe-card">
-                    <img src="odin-links-and-images/odin-recipes/recipes/images/pizza.png" alt="Pizza Recipe">
+                <article class="recipe-card">
+                    <img src="odin-links-and-images/odin-recipes/recipes/images/pizza.png" alt="Homemade Pizza">
                     <div class="recipe-card-content">
-                        <h2>Homemade Pizza</h2>
-                        <p>Make your own perfect pizza with crispy crust and your favorite toppings.</p>
+                        <h3>Homemade Pizza</h3>
+                        <p>Perfectly crispy crust with your choice of toppings.</p>
+                        <div class="recipe-meta">
+                            <span>Prep: 1h 15m</span>
+                            <span>Cook: 20 min</span>
+                            <span>Serves: 4</span>
+                        </div>
                         <a href="odin-links-and-images/odin-recipes/recipes/pizza.html" class="button">View Recipe</a>
                     </div>
-                </div>
+                </article>
 
-                <div class="recipe-card">
-                    <img src="odin-links-and-images/odin-recipes/recipes/images/chicken.png" alt="Chicken Curry Recipe">
+                <article class="recipe-card">
+                    <img src="odin-links-and-images/odin-recipes/recipes/images/chicken.png" alt="Indian Chicken Curry">
                     <div class="recipe-card-content">
-                        <h2>Indian Chicken Curry</h2>
-                        <p>A rich and flavorful Indian curry with tender chicken and aromatic spices.</p>
+                        <h3>Indian Chicken Curry</h3>
+                        <p>Rich and flavorful curry with aromatic spices.</p>
+                        <div class="recipe-meta">
+                            <span>Prep: 20 min</span>
+                            <span>Cook: 30 min</span>
+                            <span>Serves: 4</span>
+                        </div>
                         <a href="odin-links-and-images/odin-recipes/recipes/chickencurry.html" class="button">View Recipe</a>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Odin Recipes | Crafted with love for food enthusiasts</p>
-            <p class="footer-note">All recipes and images are for educational purposes only.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>Start Cooking Today</h2>
+            <p>Join our community of food lovers and start creating amazing dishes.</p>
+            <a href="odin-links-and-images/odin-recipes/index.html" class="button">Explore Recipes</a>
+        </section>
+    </main>
+    <footer class="container">
+        <div class="footer-content">
+            <p>&copy; 2025 Odin Recipes</p>
+            <nav class="footer-nav">
+                <a href="odin-links-and-images/pages/about.html">About</a>
+                <a href="odin-links-and-images/pages/contact.html">Contact</a>
+            </nav>
         </div>
     </footer>
 </body>
