@@ -251,14 +251,17 @@ li {
   margin-bottom: var(--spacing-sm);
   padding-left: var(--spacing-lg);
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
 }
 
 ul li::before {
   content: '•';
   color: var(--accent-color);
-  position: absolute;
-  left: 0;
   font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 2px;
 }
 
 ol {
@@ -269,9 +272,103 @@ ol li::before {
   content: counter(step);
   counter-increment: step;
   color: var(--accent-color);
-  position: absolute;
-  left: 0;
-  font-weight: bold;
+  font-weight: 500;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--background-light);
+  margin-top: 2px;
+}
+
+/* Recipe Instructions */
+.instructions-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--background-light);
+}
+
+.instructions-list li:last-child {
+  border-bottom: none;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  color: var(--background-white);
+  font-weight: 600;
+  margin-right: var(--spacing-md);
+}
+
+/* Recipe Ingredients */
+.ingredients-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ingredients-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--background-light);
+}
+
+.ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.ingredients-group {
+  margin-bottom: var(--spacing-md);
+}
+
+.ingredients-group h3 {
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-sm);
+  font-size: 1.1rem;
+}
+
+/* Recipe Tags */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: var(--background-white);
+  color: var(--accent-color);
+  padding: calc(var(--spacing-xs) - 1px) var(--spacing-md);
+  border-radius: 100px;
+  margin-right: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
+  text-decoration: none;
+  border: 1px solid var(--accent-color);
+  transition: var(--transition);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tag:hover {
+  background: var(--accent-color);
+  color: var(--background-white);
+  transform: translateY(-1px);
 }
 
 /* Images */
